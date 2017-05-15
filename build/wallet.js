@@ -1,8 +1,8 @@
 'use strict';
 
-var _inherits = require('babel-runtime/helpers/inherits')['default'];
-
 var _get = require('babel-runtime/helpers/get')['default'];
+
+var _inherits = require('babel-runtime/helpers/inherits')['default'];
 
 var _createClass = require('babel-runtime/helpers/create-class')['default'];
 
@@ -31,6 +31,8 @@ var _rippleLib = require('ripple-lib');
 var rippleLib = _interopRequireWildcard(_rippleLib);
 
 var Wallet = (function (_Account) {
+  _inherits(Wallet, _Account);
+
   function Wallet(options) {
     _classCallCheck(this, Wallet);
 
@@ -59,8 +61,6 @@ var Wallet = (function (_Account) {
     this._publicKey = wallet.address;
     this._privateKey = wallet.secret;
   }
-
-  _inherits(Wallet, _Account);
 
   _createClass(Wallet, [{
     key: 'sendPayment',

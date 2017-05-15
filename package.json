@@ -18,10 +18,10 @@
     "babel-runtime": "^5.6.15",
     "bluebird": "^2.9.30",
     "query-string": "^1.0.0",
-    "ripple-lib": "^0.9.4",
+    "ripple-lib": "0.9.4",
     "superagent": "^0.21.0",
     "superagent-browserify": "0.0.2",
-    "xrp-account-listener-browserify": "^1.0.1"
+    "xrp-account-listener-browserify": "1.1.0"
   },
   "devDependencies": {
     "mocha": "^2.0.1",

@@ -4,9 +4,9 @@ var _createClass = require('babel-runtime/helpers/create-class')['default'];
 
 var _classCallCheck = require('babel-runtime/helpers/class-call-check')['default'];
 
-var _inherits = require('babel-runtime/helpers/inherits')['default'];
-
 var _get = require('babel-runtime/helpers/get')['default'];
+
+var _inherits = require('babel-runtime/helpers/inherits')['default'];
 
 var _Number$isNaN = require('babel-runtime/core-js/number/is-nan')['default'];
 
@@ -34,23 +34,23 @@ var decodeURI = (function () {
     _createClass(decodeURI, [{
         key: 'decode',
         value: function decode(uri) {
-            if (typeof uri !== 'string') this['throw']('uri is not a string');
+            if (typeof uri !== 'string') this['throw']("uri is not a string");
 
             var params;
             var protocol = uri.replace(/\s/g, '').match(/^([a-z\.]+):\/\//); // host after slashes
 
-            if (!(protocol instanceof Array && protocol.length === 2)) this['throw']('protocol not supported');
+            if (!(protocol instanceof Array && protocol.length === 2)) this['throw']("protocol not supported");
             protocol = protocol[1];
 
             switch (protocol) {
-                case 'ripple.com':
+                case "ripple.com":
                     params = this.parseURI('ripple.com://', uri);
                     break;
-                case 'ripple':
+                case "ripple":
                     params = this.parseURI('ripple://', uri);
                     break;
                 default:
-                    this['throw']('protocol not supported');
+                    this['throw']("protocol not supported");
             }
 
             switch (params.action) {
@@ -60,7 +60,7 @@ var decodeURI = (function () {
                     return this.makeSend(params);
                     break;
                 default:
-                    this['throw']('this action not supported');
+                    this['throw']("this action not supported");
             }
         }
     }, {
@@ -105,12 +105,12 @@ var decodeURI = (function () {
 
             // There is one query string
             else if (parts.length === 2) {
-                var out = qs.parse(parts[1]);
-                out.action = parts[0];
-                out.parsedURI = parsedURI;
-                out.rawURI = uri;
-                return out;
-            } else throw new URIError();
+                    var out = qs.parse(parts[1]);
+                    out.action = parts[0];
+                    out.parsedURI = parsedURI;
+                    out.rawURI = uri;
+                    return out;
+                } else throw new URIError();
         }
     }, {
         key: 'throw',
@@ -123,16 +123,16 @@ var decodeURI = (function () {
 })();
 
 var URIError = (function (_Error) {
+    _inherits(URIError, _Error);
+
     function URIError(message) {
         _classCallCheck(this, URIError);
 
         _get(Object.getPrototypeOf(URIError.prototype), 'constructor', this).call(this, message);
-        this.message = message || 'Badly formatted URI';
-        this.type = 'URIError';
+        this.message = message || "Badly formatted URI";
+        this.type = "URIError";
         Error.captureStackTrace(this, URIError);
     }
-
-    _inherits(URIError, _Error);
 
     return URIError;
 })(Error);
